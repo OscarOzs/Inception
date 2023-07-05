@@ -15,6 +15,12 @@ services:
       - inception
     restart: unless-stopped
     env_file: .env
+    healthcheck:
+      test: mysqladmin ping --host=localhost -p${SQL_ROOT_PASSWORD}
+      interval: 5s
+      timeout: 1s
+      retries: 20
+      start_period: 5s
 
   wordpress:
     image: wordpress
