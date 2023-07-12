@@ -1,6 +1,4 @@
 #!/bin/bash
-# set -x
-
 
 if [ -f /var/www/html/wordpress/wp-config.php ]; then
 	echo "already exist"
